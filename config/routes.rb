@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   get 'pages/about', to: 'pages#about'
   
   resources :articles
+
+  get 'signup', to: 'users#new'
+  #post 'users', to: 'users#create'
+  resources :users, except: [:new]
   
   #   resources :posts, concerns: :toggleable
   #   resources :photos, concerns: :toggleable
